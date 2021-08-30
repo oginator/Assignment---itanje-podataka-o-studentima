@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sablon za kreiranje objekata studenata</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        class Student {
+
+            constructor(name, address, phone, course) {
+                this.name = name;
+                this.address = address;
+                this.phone = phone;
+                this.course = course;
+            }
+
+            get info() {
+                return "Name: " + this.name + "\n" +
+                    "Address: " + this.address + "\n" +
+                    "Phone: " + this.phone + "\n" +
+                    "Course: " + this.course
+            }
+
+
+        }
+
+
+        var student1 = new Student("John White", "High Park 36", "(507) 833-3567", "Geography");
+
+        var student2 = new Student("Jacob Smith", "Kingston, New York 12401", "(541) 754-3010", "History");
+
+        var student3 = new Student("William Anderson", "Bigtown BG23 4YZ", "(555) 223-12345", "Biology");
+
+
+        console.log(student1.info);
+        console.log(student2.info);
+        console.log(student3.info);
+
+
+        var data = fetch('https://v-dresevic.github.io/Advanced-JavaScript-Programming/data/students.txt').then(
+            function (
+                response) {
+                response.text().then(function (text) {
+                    data.text = text;
+
+
+                    let words = data.text.split("\n");
+
+                    console.log(words);
+
+/*
+                    //koriscenjem for petlje ne mogu doci do resenja sa nazivima svojstava
+                    for (i = 0; i < words.length; i++) {
+
+                        document.body.innerHTML += '<h4>' + words[i] + '<h4>';
+
+                    }
+*/
+
+
+                    document.body.innerHTML += '<h4>' + 'Name: ' + words[0] + '<h4>';
+                    document.body.innerHTML += '<h4>' + 'Address: ' + words[1] + '<h4>';
+                    document.body.innerHTML += '<h4>' + 'Phone: ' + words[2] + '<h4>';
+                    document.body.innerHTML += '<h4>' + 'Course: ' + words[3] + '<h4>';
+
+                    document.body.innerHTML += '<h4>' + 'Name: ' + words[4] + '<h4>';
+                    document.body.innerHTML += '<h4>' + 'Address: ' + words[5] + '<h4>';
+                    document.body.innerHTML += '<h4>' + 'Phone: ' + words[6] + '<h4>';
+                    document.body.innerHTML += '<h4>' + 'Course: ' + words[7] + '<h4>';
+
+                    document.body.innerHTML += '<h4>' + 'Name: ' + words[8] + '<h4>';
+                    document.body.innerHTML += '<h4>' + 'Address: ' + words[9] + '<h4>';
+                    document.body.innerHTML += '<h4>' + 'Phone: ' + words[10] + '<h4>';
+                    document.body.innerHTML += '<h4>' + 'Course: ' + words[11] + '<h4>';
+
+                    document.body.innerHTML += '<h4>' + 'Name: ' + words[12] + '<h4>';
+                    document.body.innerHTML += '<h4>' + 'Address: ' + words[13] + '<h4>';
+                    document.body.innerHTML += '<h4>' + 'Phone: ' + words[14] + '<h4>';
+                    document.body.innerHTML += '<h4>' + 'Course: ' + words[15] + '<h4>';
+
+                    document.body.innerHTML += '<h4>' + 'Name: ' + words[16] + '<h4>';
+                    document.body.innerHTML += '<h4>' + 'Address: ' + words[17] + '<h4>';
+                    document.body.innerHTML += '<h4>' + 'Phone: ' + words[18] + '<h4>';
+                    document.body.innerHTML += '<h4>' + 'Course: ' + words[19] + '<h4>';
+
+
+                });
+            });
+    </script>
+
+</body>
+
+</html>
